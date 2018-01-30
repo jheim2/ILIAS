@@ -30,6 +30,7 @@
 /Customizing/global
 /setup/sql/ilDBTemplate
 virtual-data
+/merge_conflicts
 
 # /dicto
 /dicto/results/*
