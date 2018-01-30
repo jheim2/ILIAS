@@ -80,8 +80,10 @@ class ilContainer extends ilObject
 
 	protected $order_type = 0;
 	protected $hiddenfilesfound = false;
-	protected $news_timeline = false;
-	protected $news_timeline_auto_entries = false;
+//	protected $news_timeline = false;
+	protected $news_timeline = true; //jh 
+//	protected $news_timeline_auto_entries = false;
+	protected $news_timeline_auto_entries = true; //jh
 
 	// container view constants
 	const VIEW_SESSIONS = 0;
@@ -120,6 +122,7 @@ class ilContainer extends ilObject
 	protected $setting;
 
 	function __construct($a_id = 0, $a_reference = true)
+//	function __construct($a_id = 1, $a_reference = true) //test jh
 	{
 		global $DIC;
 
@@ -976,7 +979,9 @@ class ilContainer extends ilObject
 		self::_writeContainerSetting($this->getId(), "news_timeline_landing_page", (int) $this->getNewsTimelineLandingPage());
 		include_once("./Services/Object/classes/class.ilObjectServiceSettingsGUI.php");
 		self::_writeContainerSetting($this->getId() ,ilObjectServiceSettingsGUI::NEWS_VISIBILITY,(int) $this->getNewsBlockActivated());
-		self::_writeContainerSetting($this->getId() ,ilObjectServiceSettingsGUI::USE_NEWS,(int) $this->getUseNews());
+//		self::_writeContainerSetting($this->getId() ,ilObjectServiceSettingsGUI::NEWS_VISIBILITY,"1"); //jh
+//		self::_writeContainerSetting($this->getId() ,ilObjectServiceSettingsGUI::USE_NEWS,(int) $this->getUseNews());
+		self::_writeContainerSetting($this->getId() ,ilObjectServiceSettingsGUI::USE_NEWS,"1"); //jh
 
 		return $ret;
 	}

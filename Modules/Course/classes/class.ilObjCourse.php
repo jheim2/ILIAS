@@ -67,7 +67,8 @@ class ilObjCourse extends ilContainer implements ilMembershipRegistrationCodes
 	private $reg_access_code_enabled = false;
 	private $status_dt = null;
 	
-	private $mail_members = ilCourseConstants::MAIL_ALLOWED_ALL;
+//	private $mail_members = ilCourseConstants::MAIL_ALLOWED_ALL;
+	private $mail_members = ilCourseConstants::MAIL_ALLOWED_TUTORS; //jh1077 wie mg1023
 	
 	protected $crs_start; // [ilDate]
 	protected $crs_end; // [ilDate]
@@ -266,7 +267,7 @@ class ilObjCourse extends ilContainer implements ilMembershipRegistrationCodes
 	} 	
 	function getActivationStart()
 	{
-		return $this->activation_start;
+		return $this->activation_start ? $this->activation_start : strtotime("now"); // changed by mg1023;
 	}
 	function setActivationStart($a_value)
 	{
@@ -274,7 +275,8 @@ class ilObjCourse extends ilContainer implements ilMembershipRegistrationCodes
 	}
 	function getActivationEnd()
 	{
-		return $this->activation_end;
+//		return $this->activation_end;
+		return $this->activation_end ? $this->activation_end : strtotime("+8 months"); // changed by mg1023
 	}
 	function setActivationEnd($a_value)
 	{
@@ -1398,10 +1400,10 @@ class ilObjCourse extends ilContainer implements ilMembershipRegistrationCodes
 			$ilDB->quote(0 ,'integer').", ".
 			$ilDB->quote($this->getActivationStart() ,'integer').", ".
 			$ilDB->quote($this->getActivationEnd() ,'integer').", ".
-			$ilDB->quote(IL_CRS_SUBSCRIPTION_DEACTIVATED ,'integer').", ".
+			$ilDB->quote(1 ,'integer').", ". //jh
 			$ilDB->quote($this->getSubscriptionStart() ,'integer').", ".
 			$ilDB->quote($this->getSubscriptionEnd() ,'integer').", ".
-			$ilDB->quote(IL_CRS_SUBSCRIPTION_DIRECT ,'integer').", ".
+			$ilDB->quote(IL_CRS_SUBSCRIPTION_PASSWORD ,'integer').", ". //jh
 			$ilDB->quote($this->getSubscriptionPassword() ,'text').", ".
 			"0, ".
 			$ilDB->quote($this->getSubscriptionMaxMembers() ,'integer').", ".
@@ -2254,15 +2256,9 @@ class ilObjCourse extends ilContainer implements ilMembershipRegistrationCodes
 		return true;
 	}
 	
-	/**
-	 * Minimum members check
-	 * @global type $ilDB
-	 * @return array
-	 */
 	public static function findCoursesWithNotEnoughMembers()
 	{
-		$ilDB = $GLOBALS['DIC']->database();
-		$tree = $GLOBALS['DIC']->repositoryTree();
+		global $ilDB;
 		
 		$res = array();
 		
@@ -2282,14 +2278,6 @@ class ilObjCourse extends ilContainer implements ilMembershipRegistrationCodes
 			" AND (crs_start IS NULL OR crs_start > ".$ilDB->quote($now, "integer").")");
 		while($row = $ilDB->fetchAssoc($set))
 		{
-			$refs = ilObject::_getAllReferences($row['obj_id']);
-			$ref = end($refs);
-			
-			if($tree->isDeleted($ref))
-			{
-				continue;
-			}
-			
 			$part = new ilCourseParticipants($row["obj_id"]);
 			$reci = $part->getNotificationRecipients();
 			if(sizeof($reci))

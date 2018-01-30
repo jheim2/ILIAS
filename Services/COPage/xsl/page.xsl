@@ -2798,6 +2798,21 @@
 			</object>
 		</xsl:when>
 		
+		<!-- Mediathek -->
+		<xsl:when test = "substring-after($data,'mediathek.vm.uni-freiburg.de') != ''">
+			<object>
+
+			<iframe frameBorder="0" scrolling="no">
+				<xsl:attribute name="width"><xsl:value-of select="$width"/></xsl:attribute>
+				<xsl:attribute name="height"><xsl:value-of select="$height"/></xsl:attribute>
+				<xsl:attribute name="src"><xsl:value-of select="$httpprefix"/>//mediathek.vm.uni-freiburg.de/embed.php?id<xsl:value-of select="//MediaObject[@Id=$cmobid]/MediaItem[@Purpose=$curPurpose]/Parameter[@Name='id']/@Value" /><xsl:text disable-output-escaping="yes">&amp;</xsl:text>token=<xsl:value-of select="//MediaObject[@Id=$cmobid]/MediaItem[@Purpose=$curPurpose]/Parameter[@Name='token']/@Value" /></xsl:attribute>
+				<xsl:comment>Comment to have separate iframe ending tag</xsl:comment>
+			</iframe>
+
+			</object>
+		</xsl:when>
+		
+		
 		<!-- Flickr -->
 		<xsl:when test = "substring-after($data,'flickr.com') != ''">
 			<xsl:variable name="flickr_tags"><xsl:if test = "//MediaObject[@Id=$cmobid]/MediaItem[@Purpose=$curPurpose]/Parameter[@Name='tags']/@Value != ''">&amp;tags=<xsl:value-of select="//MediaObject[@Id=$cmobid]/MediaItem[@Purpose=$curPurpose]/Parameter[@Name='tags']/@Value"/></xsl:if></xsl:variable>

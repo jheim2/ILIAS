@@ -1793,13 +1793,14 @@ return;
 		
 		// check cache (same parameters, non-edit mode and rendered time
 		// > last change
-		if (($this->getOutputMode() == "preview" || $this->getOutputMode() == "presentation") &&
+		if (($this->getOutputMode() == "preview" || $this->getOutputMode() == "presentation") &&   //jh added one condition
 			!$this->getCompareMode() &&
 			!$this->getAbstractOnly() &&
 			$md5 == $this->obj->getRenderMd5() &&
 			($this->obj->getLastChange() < $this->obj->getRenderedTime()) &&
 			$this->obj->getRenderedTime() != "" &&
-			$this->obj->old_nr == 0)
+			$this->obj->old_nr == 0 &&
+			$this->obj->getParentType() !== "cont")   //jh dont use Cache when "cont"-type
 		{
 			// cache hit
 			$output = $this->obj->getRenderedContent();

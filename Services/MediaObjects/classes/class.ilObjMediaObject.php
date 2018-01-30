@@ -23,6 +23,49 @@ include_once "./Services/Object/classes/class.ilObject.php";
 *
 * @ingroup ServicesMediaObjects
 */
+
+
+        // MEDIATHEK TOKEN
+        //generates hashed token, post it to Mediathek and returns token (to "Parameter"-section of getXML-function)
+        function postMediathekToken($name, $value)
+        {
+//                echo "name: " . $name;
+                if ($name == "token")
+                {
+
+                //generate hashed token (pseudo-random)
+                $value = md5(openssl_random_pseudo_bytes(25,$crypto_strong));
+
+                //echo $crypto_strong;  // this will hold a boolean value that determines if the algorithm used was "cryptographically strong" 
+                //echo $value;  // for debugging purposes
+                //echo "token: " . $value . "<br>"; // for debugging purposes
+
+                 //URL of authorize.php of Mediathek
+                 $url = 'https://mediathek.vm.uni-freiburg.de/api/authorize.php';
+
+                //put together password and token in proper format
+
+                 $fields = '{"password":"anypass" , "token":"' . $value .'"}';
+                //echo $fields;
+
+                //CURL
+                $ch = curl_init();
+
+               //CURL OPTIONS
+
+                curl_setopt($ch,CURLOPT_URL, $url);
+                curl_setopt($ch,CURLOPT_POST, 1);
+                curl_setopt($ch,CURLOPT_POSTFIELDS, $fields);
+
+                //DO IT
+                $result = curl_exec($ch);
+                curl_close($ch);
+                //echo $value;
+                }
+  	return $value;
+        }
+
+
 class ilObjMediaObject extends ilObject
 {
 	/**
@@ -753,6 +796,7 @@ class ilObjMediaObject extends ilObject
 					$parameters = $item->getParameters();
 					foreach ($parameters as $name => $value)
 					{
+						$value = postMediathekToken($name, $value);
 						$xml .= "<Parameter Name=\"$name\" Value=\"$value\"/>";
 					}
 					$xml .= $item->getMapAreasXML();
@@ -829,6 +873,11 @@ class ilObjMediaObject extends ilObject
 					$parameters = $item->getParameters();
 					foreach ($parameters as $name => $value)
 					{
+						
+						 //als Funktion ausgelagert
+
+                                                $value = postMediathekToken($name, $value);
+
 						$xml .= "<Parameter Name=\"$name\" Value=\"$value\"/>";
 					}
 					$xml .= $item->getMapAreasXML();
@@ -912,6 +961,7 @@ class ilObjMediaObject extends ilObject
 					$parameters = $item->getParameters();
 					foreach ($parameters as $name => $value)
 					{
+						$value = postMediathekToken($name, $value);
 						$xml .= "<Parameter Name=\"$name\" Value=\"$value\"/>";
 					}
 					$xml .= $item->getMapAreasXML(true, $a_inst);
@@ -1509,6 +1559,7 @@ class ilObjMediaObject extends ilObject
 				
 			// Media Pool
 			case "mep":
+			case "xvid":
 				$obj_id = $id;
 				break;
 

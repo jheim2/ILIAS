@@ -262,6 +262,38 @@ class ilExternalMediaAnalyzer
 
 		return $par;
 	}
+
+ 	/**
+	* Identify Mediathek links
+	*/
+	static function isMediathek($a_location)
+	{
+		if (strpos($a_location, "mediathek.vm.uni-freiburg.de") > 0) 
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	* Extract Mediathek Parameter
+	*/
+	static function extractMediathekParameters($a_location)
+	{
+		$par = array();
+		$pos1 = strpos($a_location, "id=");
+		//$pos2 = strpos($a_location, "&", $pos1);
+		if ($pos1 > 0)
+		{
+			$len = ($pos2 > 0)
+				? $pos2
+				: strlen($a_location);
+			$par["id"] = "=" . substr($a_location, $pos1+3, $pos1+36);
+			$par["token"] = 'TOKEN';
+		}
+
+		return $par;
+	}
 	
 	/**
 	* Extract URL information to parameter array
@@ -295,6 +327,14 @@ class ilExternalMediaAnalyzer
 			$ext_par = ilExternalMediaAnalyzer::extractGoogleVideoParameters($a_location);
 			$a_parameter = array();
 		}
+	
+                //Mediathek 
+                if (ilExternalMediaAnalyzer::isMediathek($a_location))
+                {
+                        $ext_par = ilExternalMediaAnalyzer::extractMediathekParameters($a_location);
+                        $a_parameter = array();
+                }
+
 
 		// GoogleDocs
 		if (ilExternalMediaAnalyzer::isGoogleDocument($a_location))
