@@ -499,11 +499,11 @@ class ilForumCronNotification extends ilCronJob
 			$recipients = array_unique($provider->getCronRecipients());
 
 			$this->logger->info(sprintf(
-				'Trying to sent forum notifications for posting id "%s", type "%s" and recipients: %s',
+				'Trying to send forum notifications for posting id "%s", type "%s" and recipients: %s',
 				$provider->getPostId(), $notification_type, implode(', ', $recipients)
 			));
 
-			$mailNotification = new ilForumMailNotification($provider);
+			$mailNotification = new ilForumMailNotification($provider, $this->logger);
 			$mailNotification->setIsCronjob(true);
 			$mailNotification->setType($notification_type);
 			$mailNotification->setRecipients($recipients);
