@@ -195,8 +195,8 @@ $query = 'SELECT MAX(meta_description_id) desc_id from il_meta_description ';
 $res = $ilDB->query($query);
 while($row = $res->fetchRow(ilDBConstants::FETCHMODE_OBJECT))
 {
-	$query = 'UPDATE il_meta_description_seq SET sequence = '. $ilDB->quote($row->desc_id + 100);
-	$ilDB->manipulate($query);
+	$ilDB->dropSequence("il_meta_description");
+	$ilDB->createSequence("il_meta_description", $row->desc_id + 100);
 }
 ?>
 <#13>
@@ -226,4 +226,27 @@ if(file_exists($old_path))
 <#15>
 <?php
 $ilCtrlStructureReader->getStructure();
+?>
+
+<#16>
+<?php
+
+$query = 'select id from adm_settings_template  '.
+	'where title = '. $ilDB->quote('il_astpl_loc_initial','text').
+	'or title = '. $ilDB->quote('il_astpl_loc_qualified','text');
+$res = $ilDB->query($query);
+while($row = $res->fetchRow(ilDBConstants::FETCHMODE_OBJECT))
+{
+	$ilDB->replace(
+		'adm_set_templ_value', 
+		[
+           	'template_id' => ['integer', $row->id],
+			 'setting' => ['text', 'pass_scoring']
+		],
+		[
+			'value' => ['integer',0],
+			'hide' => ['integer',1]
+		]
+	);
+}
 ?>
