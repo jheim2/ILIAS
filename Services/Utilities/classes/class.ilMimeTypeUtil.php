@@ -374,6 +374,7 @@ class ilMimeTypeUtil {
 	const TEXT__MCF = 'text/mcf';
 	const TEXT__PASCAL = 'text/pascal';
 	const TEXT__PLAIN = 'text/plain';
+	const TEXT__R = 'text/r';
 	const TEXT__RICHTEXT = 'text/richtext';
 	const TEXT__SCRIPLET = 'text/scriplet';
 	const TEXT__SGML = 'text/sgml';
@@ -1083,6 +1084,7 @@ class ilMimeTypeUtil {
 		'qtc' => self::VIDEO__X_QTC,
 		'qti' => self::IMAGE__X_QUICKTIME,
 		'qtif' => self::IMAGE__X_QUICKTIME,
+		'r' => self::TEXT__R,
 		'ra' => array(
 			self::AUDIO__X_PN_REALAUDIO,
 			self::AUDIO__X_PN_REALAUDIO_PLUGIN,
