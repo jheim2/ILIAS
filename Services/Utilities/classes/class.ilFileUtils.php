@@ -691,6 +691,7 @@ class ilFileUtils
 			'qtc',   // VIDEO__X_QTC,
 			'qti',   // IMAGE__X_QUICKTIME,
 			'qtif',   // IMAGE__X_QUICKTIME,
+			'r',   // TEXT__R,
 			'ra',   // AUDIO__X_PN_REALAUDIO,
 			'ram',   // AUDIO__X_PN_REALAUDIO,
 			'rast',   // IMAGE__CMU_RASTER,
