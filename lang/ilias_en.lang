@@ -1083,7 +1083,7 @@ assessment#:#tst_postpone_on_desc#:#Question that users just look at and flip ov
 assessment#:#tst_postpone_off#:#Unanswered Questions Stay in Position
 assessment#:#tst_postpone_off_desc#:#Question that users just look at and flip over without answering them, will stay at their position in the test and will not be enqueued at the end of the test.
 assessment#:#tst_print#:#Test and Assessment - Print View
-assessment#:#tst_processing_time_desc#:#Participants can work through the test only for a specified period of time. Time is clocking away from the moment a user starts a test for the first time. Suspending the test does not stop the clock.
+assessment#:#tst_processing_time_desc#:#Participants can work through the test only for a specified period of time. Time is clocking away from the moment a user starts a test for the first time. Suspending the test does not stop the clock. If the number of possible test passes is limited an additional feature for granting extra time to participants appears in the tab 'Participants'.
 assessment#:#tst_processing_time#:#Limit Duration of Test
 assessment#:#tst_qst_order#:#No.
 assessment#:#tst_question_mark#:#Mark this question
@@ -4845,8 +4845,8 @@ dateplaner#:#cal_where#:#Location
 dateplaner#:#cal_year_s#:#Year(s)
 dateplaner#:#cal_yearly#:#Yearly
 dateplaner#:#created#:#Created
-dateplaner#:#crs_cal_activation_end#:#Course Availability ends
-dateplaner#:#crs_cal_activation_start#:#Course Availability starts
+dateplaner#:#crs_cal_activation_end#:#Course availability ends
+dateplaner#:#crs_cal_activation_start#:#Course availability starts
 dateplaner#:#crs_cal_reg_end#:#Registration End
 dateplaner#:#crs_cal_reg_start#:#Registration Start
 dateplaner#:#date_format#:#m/d/Y H:i
@@ -7747,8 +7747,8 @@ rbac#:#rbac_add_new_local_role#:#Add New Local Role
 search#:#search_item_filter_form#:#Search by Type
 search#:#search_item_filter_form_info#:#Search can be restricted to the chosen file types.
 administration#:#group_export#:#Visible in Groups
-tbl#:#tbl_export_csv#:#Export .csv
-tbl#:#tbl_export_excel#:#Export .xls
+tbl#:#tbl_export_csv#:#Export CSV
+tbl#:#tbl_export_excel#:#Export Excel
 crs#:#crs_custom_user_fields#:#Course Relevant User Data
 grp#:#grp_custom_user_fields#:#Group Relevant User Data
 assessment#:#info_answer_type_change#:#The question already contains images. You can't change the answer type to multi-line answers.
@@ -8599,7 +8599,7 @@ wsp#:#wsp_set_permission_single_user#:#A Single User
 wsp#:#wsp_set_permission_group#:#Members of Group
 wsp#:#wsp_set_permission_course#:#Members of Course
 wsp#:#wsp_set_permission_all_password#:#World Wide Web with Password
-wsp#:#wsp_permission_removed#:#The item has been removed.
+wsp#:#wsp_permission_removed#:#Entry has been removed.
 wsp#:#wsp_share_with_members#:#Share with members
 wsp#:#wsp_share_success#:#A new entry has been added.
 wsp#:#wsp_share_search_users#:#Search Users
@@ -9368,6 +9368,7 @@ blog#:#blog_posting#:#Blog Posting
 blog#:#blog_change_notification_subject#:#Blog "%s" has been updated
 blog#:#blog_change_notification_body_new#:#the following blog posting was created.
 blog#:#blog_change_notification_body_update#:#the following blog posting has been updated.
+blog#:#blog_change_notification_body_comment#:#the following blog posting has been commented.
 blog#:#blog_change_notification_link#:#Link to Blog Posting
 blog#:#blog_notification_toggle_on#:#Activate Notification
 blog#:#blog_notification_toggle_off#:#Deactivate Notification
@@ -9609,7 +9610,8 @@ assessment#:#tst_question_hints_table_link_edit_hint_page#:#Edit Page
 assessment#:#tst_question_hints_form_cmd_save_points#:#Save Points
 assessment#:#tst_question_hints_form_cmd_save_points_and_edit_page#:# Save Points and Edit Page
 assessment#:#tst_question_hints_back_to_hint_list#:#Question Hint List
-assessment#:#conf_delete_pass#:#Really delete pass?
+assessment#:#conf_delete_pass_ctm#:#Wollen Sie Ihre bisherigen Antworten wirklich löschen?
+assessment#:#conf_delete_pass#:#Are you sure you want to delete your existing answers?
 help#:#help_tooltips#:#Help Tooltips
 help#:#help_tooltip_id#:#Tooltip ID
 help#:#help_tt_text#:#Text
@@ -10466,8 +10468,8 @@ dcl#:#dcl_save_confirmation_desc#:#Users have to confirm a new DataCollection en
 dcl#:#dcl_confirm_storing_records#:#Please validate and confirm your input.
 dcl#:#dcl_confirm_storing_records_no_permission#:#You have no permission to change the record afterwards.
 dcl#:#dcl_save_record#:#Save Entry
-dcl#:#dlc_xls_async_export#:#Asynchronous XLSX-Export
-dcl#:#dcl_export_started#:#Asynchronous Export started
+dcl#:#dlc_xls_async_export#:#Asynchronous Excel export
+dcl#:#dcl_export_started#:#Asynchronous export started
 dcl#:#dcl_export_finished#:#Export finished
 dcl#:#dcl_supported_filetypes#:#Allowed file-extensions
 dcl#:#dcl_supported_filetypes_desc#:#You can set the allowed extensions comma seperated. For example: pdf, docx
