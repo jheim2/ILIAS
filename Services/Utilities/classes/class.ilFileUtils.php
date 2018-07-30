@@ -744,10 +744,14 @@ class ilFileUtils
 			'qti',   // IMAGE__X_QUICKTIME,
 			'qtif',   // IMAGE__X_QUICKTIME,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			'r',   // TEXT__R,
 =======
 			'r',    // R script file
 >>>>>>> f511e6a5ab3f9335da0cb4e808fc6910423be91c
+=======
+			'r',    // R script file
+>>>>>>> 109b5a381e0798588a9c6d875a48cbed5e3dcde2
 			'ra',   // AUDIO__X_PN_REALAUDIO,
 			'ram',   // AUDIO__X_PN_REALAUDIO,
 			'rar',    // RAR (application/vnd.rar)
