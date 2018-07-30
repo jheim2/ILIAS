@@ -9434,6 +9434,11 @@ footer.ilFooter {
   background-color: #4c6586;
   color: white;
 }
+@media only screen and (max-width: 767px) {
+  footer.ilFooter {
+    height: auto;
+  }
+}
 footer.ilFooter div.ilFooterContainer {
   color: white;
   line-height: 1.75;
@@ -9975,10 +9980,8 @@ form.form-inline {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.form-horizontal input.form-control,
-.form-horizontal textarea.form-control,
-.form-horizontal select.form-control {
-  /* max-width: 80%; */
+textarea.form-control {
+  max-width: 100%;
 }
 select.form-control {
   width: auto;
@@ -10509,9 +10512,17 @@ div.ilForumQuoteHead {
 }
 .ilFrmPostImage img {
   vertical-align: top;
-  padding: 5px 20px 5px 5px;
+  margin: 5px 20px 5px 5px;
   border: none;
+}
+.ilFrmPostImage img[src*="data:image/"] {
   max-width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .ilFrmPostImage img[src*="data:image/"] {
+    margin: 0 !important;
+    padding: 5px 20px 5px 5px;
+  }
 }
 .ilFrmPostClear {
   clear: both;
@@ -10542,7 +10553,7 @@ div.ilFrmPostHeader span.small {
     width: 100%;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen {
   .ilFrmPostContentContainer img {
     width: 100%;
     height: auto !important;
@@ -14739,6 +14750,7 @@ body.ilPrtfPdfBody .ilPCMyCoursesToggle img {
 .ilOnScreenChatMenuItem .media-body .media-heading {
   text-overflow: ellipsis;
   overflow: hidden;
+  max-width: 225px;
 }
 .ilOnScreenChatMenuItem .media-body .media-heading a {
   color: #557196 !important;

@@ -817,6 +817,7 @@ assessment#:#tst_source_question_pool#:#Fragenpool
 assessment#:#tst_filter_taxonomy#:#Taxonomie
 assessment#:#tst_filter_tax_node#:#Taxonomieknoten
 assessment#:#tst_non_avail_pools_table#:#Nicht verfügbare Fragenpools
+assessment#:#tst_non_avail_pool_msg_status_trashed#:#<b>Der Fragenpool liegt im Papierkorb.</b><br />Sollte er permanent vom System entfernt werden kann der Test die Fragen aus diesem Pool nicht erneut synchronisieren.
 assessment#:#tst_non_avail_pool_msg_status_lost#:#<b>Dieser Fragenpool steht nicht mehr zur Verfügung.</b><br />Eine Synchronisierung von Fragen aus diesem Pool ist nicht mehr möglich. Sie können aus den im Test bereits befindlichen Fragen einen neuen Fragenpool ableiten.
 assessment#:#tst_derive_new_pool#:#Neuen Fragenpool ableiten
 assessment#:#tst_derive_new_pools#:#Neue Fragenpools ableiten
@@ -1073,7 +1074,7 @@ assessment#:#test_using_template#:#Dieser Test verwendet die Vorlage %s. Wenn Si
 assessment#:#test_using_template_link#:#Vorlage nicht mehr verwenden
 assessment#:#text_correct#:#Korrekter Text
 assessment#:#text_gap#:#Textlücke
-assessment#:#text_maximum_chars_allowed#:#Bitte geben Sie nicht mehr als ein Maximum von %s Zeichen ein. Alle weiteren Zeichen werden am Ende abgeschnitten.
+assessment#:#text_maximum_chars_allowed#:#Bitte geben Sie nicht mehr als ein Maximum von %s Zeichen ein. Eingaben über das Limit hinaus werden nicht abgeschnitten, können aber ggf. in die Bewertung mit eingehen.
 assessment#:#text_rating#:#Methode für Textvergleiche
 assessment#:#text_wrong#:#Fehlerhafter Text
 assessment#:#textsize#:#Textgröße
@@ -1939,6 +1940,7 @@ cmps#:#cmps_needs_update#:#Aktualisierung notwendig
 cmps#:#cmps_needs_upgrade#:#Die aktuell installierte Plugin-Version ist älter als die zuvor installierte. Bitte installieren Sie das aktuelle Plugin.
 cmps#:#cmps_no_db_update_file_available#:#Kein Datenbank-Update-Skript verfügbar
 cmps#:#cmps_no_language_file_available#:#Keine Sprachdatei verfügbar
+cmps#:#cmps_must_installed#:#Die Komponente muss installiert werden.
 cmps#:#cmps_plugin#:#Plugin
 cmps#:#cmps_plugin_activated#:#Das Plugin wurde aktiviert.
 cmps#:#cmps_plugin_db_prefixes#:#Präfixe Datenbanktabelle
@@ -2993,7 +2995,7 @@ common#:#keywords#:#Schlagwörter
 common#:#lang_dateformat#:#d.m.Y
 common#:#lang_path#:#Sprachdateien-Pfad
 common#:#lang_refresh_confirm#:#Sollen wirklich alle Sprachen aktualisiert werden?
-common#:#lang_refresh_confirm_info#:#ILIAS hat geänderte Sprachvariablen gefunden. Die Aktualisierung einer Sprachen lädt alle Daten aus ihrer Standard-Sprachdatei und eventuell aus einer Custom-Sprachdatei in die Datenbank. Ihre Änderungen werden durch das Laden der Standard-Sprachdatei nicht überschrieben. Eine Custom-Sprachdatei überschreibt nur Änderungen, die älter sind als ihr eigenes Speicherdatum.
+common#:#lang_refresh_confirm_info#:#ILIAS hat geänderte Sprachvariablen gefunden. Die Aktualisierung einer Sprache lädt alle Daten aus ihrer Standard-Sprachdatei und eventuell aus einer Custom-Sprachdatei in die Datenbank. Ihre Änderungen werden durch das Laden der Standard-Sprachdatei nicht überschrieben. Eine Custom-Sprachdatei überschreibt nur Änderungen, die älter sind als ihr eigenes Speicherdatum.
 common#:#lang_refresh_confirm_selected#:#Möchten Sie wirklich die ausgewählten Sprachen aktualisieren?
 common#:#lang_uninstall_changes#:#Lokale Änderungen entfernen
 common#:#lang_uninstall_confirm#:#Möchten Sie die ausgewählten Sprachen wirklich deinstallieren?
@@ -5169,6 +5171,7 @@ crs#:#crs_groupings#:#Kursgruppierungen
 crs#:#crs_groups_nr#:#Anzahl Gruppen
 crs#:#crs_grp_added_grouping#:#Eine neue Mitgliedschaftsbeschränkung wurde angelegt.
 crs#:#crs_grp_already_assigned#:#Da Sie bereits Mitglied in einem der Kurse sind, können Sie nicht einem weiteren Kurs aus der Liste beitreten!
+grp#:#grp_grp_already_assigned#:#Da Sie bereits Mitglied in einer der Gruppen sind, können Sie nicht einer weiteren Gruppe aus der Liste beitreten!
 crs#:#crs_grp_assign_crs#:#Kurs zuordnen
 crs#:#crs_grp_assignments#:#Zuordnung von Kursmitgliedern zu Gruppen
 crs#:#crs_grp_enter_title#:#Bitte geben Sie einen Titel ein.
@@ -6566,7 +6569,7 @@ mail#:#mail_settings_external_frm_head#:#Externe E-Mails
 mail#:#mail_settings_user_frm_head#:#Benutzer E-Mails
 mail#:#mail_settings_system_frm_head#:#System E-Mails
 mail#:#mail_smtp_status#:#SMTP-Versand aktivieren
-mail#:#mail_smtp_status_info#:#Falls aktiviert, delegiert ILIAS den Versand externer E-Mails an den hier konfigurierten Mail-Server, statt die von der PHP-Runtime bereitgestellte Funktionalität für den Versand zu nutzen (mail()-Funtkion, sendmail).
+mail#:#mail_smtp_status_info#:#Falls aktiviert, delegiert ILIAS den Versand externer E-Mails an den hier konfigurierten Mail-Server, statt die von der PHP-Runtime bereitgestellte Funktionalität für den Versand zu nutzen (mail()-Funktion, sendmail).
 mail#:#mail_smtp_host#:#Host
 mail#:#mail_smtp_host_info#:#Bitte tragen Sie hier den Hostsnamen oder die IP des Mail-Servers ein.
 mail#:#mail_smtp_port#:#Port
@@ -6582,7 +6585,7 @@ mail#:#mail_smtp_password#:#Passwort
 mail#:#mail_smtp_password_req#:#Sofern Sie einen Benutzer angeben, ist das Passwort obligatorisch.
 mail#:#mail_system_usr_from_addr#:#E-Mail-Adresse des Absenders (From)
 mail#:#mail_system_usr_from_name#:#Name des Absenders (From)
-mail#:#mail_system_usr_from_name_info#:#Als Platzhalter können [FULLNAME], [FIRSTNAME] und [LASTNAME] genutzt werden. Diese werden dann durch das jeweilige Datum des Initiators der E-Mail ersetzt.
+mail#:#mail_system_usr_from_name_info#:#Als Platzhalter können [FULLNAME], [FIRSTNAME] und [LASTNAME] genutzt werden. Diese werden dann durch die entsprechenden Daten des Absenders ersetzt.
 mail#:#mail_system_usr_env_from_addr#:#Technischer Absender
 mail#:#mail_system_usr_env_from_addr_info#:#Sofern dieses Feld leer gelassen wird, wird die E-Mail-Adresse des Absenders genutzt, sofern der SMTP-Versand genutzt wird. Andernfalls ist es die Aufgabe des Server-Administrators, den Header zu konfigurieren.
 mail#:#mail_system_sys_env_from_addr_info#:#Sofern dieses Feld leer gelassen wird, wird die E-Mail-Adresse des Absenders genutzt, sofern der SMTP-Versand genutzt wird. Andernfalls ist es die Aufgabe des Server-Administrators, den Header zu konfigurieren.
@@ -7696,9 +7699,11 @@ rbac#:#rbac_log_edit_permissions#:#Rechteinstellungen verändern
 rbac#:#rbac_log_edit_template#:#Rollenvorlagen editieren
 rbac#:#rbac_log_edit_template_existing#:#Rollenvorlagen auf Objekte anwenden
 rbac#:#rbac_log_inheritance_add#:#Vererbung unterbrochen für "%s"
+rbac#:#rbac_log_inheritance_rmv#:#Vererbung wiederherstellen für "%s"
 rbac#:#rbac_log_link_object#:#Objekt verknüpfen
 rbac#:#rbac_log_move_object#:#Objekt verschieben
 rbac#:#rbac_log_operation_add#:#Recht hinzugefügt für "%s"
+rbac#:#rbac_log_operation_rmv#:#Recht entfernt für "%s"
 rbac#:#rbac_log_source_object#:#Quell-Objekt
 rbac#:#rbac_msg_user_already_assigned#:#Die ausgewählten Benutzer sind dieser Rolle bereits zugeordnet.
 rbac#:#rbac_not_change_existing_objects#:#Vorhandene Objekte NICHT anpassen
@@ -8749,7 +8754,7 @@ survey#:#manage_phrases#:#Meine Phrasen
 survey#:#material#:#Material
 survey#:#material_added_successfully#:#Sie haben erfolgreich einen Verweis auf Material eingestellt!
 survey#:#materials#:#Materialien
-survey#:#materials_deleted#:#Material(ien) gelöscht
+survey#:#materials_deleted#:#Die Materialien wurden von der Frage entfernt.
 survey#:#matrix_appearance#:#Darstellung
 survey#:#matrix_bipolar_adjectives#:#Pol und Gegenpol
 survey#:#matrix_bipolar_adjectives_description#:#Sie können ein Wertepaar mit einem Pol und einem Gegenpol verwenden, um die Spaltenskala genauer zu beschreiben
@@ -9453,8 +9458,8 @@ cptch#:#cptch_wrong_input#:#Falsche Eingabe
 forum#:#cont_captcha_code#:#Code
 cptch#:#cptch_freetype_support_needed#:#Um diese Funktion zu nutzen benötigen Sie die freetype-Unterstützung von PHP.
 grp#:#grp_print_list#:#Liste erstellen
-sess#:#sess_members_print_title#:#Gruppenmitglieder
-grp#:#grp_members_print_title#:#Sitzungsteilnehmer
+sess#:#sess_members_print_title#:#Sitzungsteilnehmer
+grp#:#grp_members_print_title#:#Gruppenmitglieder
 trac#:#trac_closed_misc#:#Sonstige
 common#:#reg_goto_parent_membership_info#:#Nur Mitglieder können auf das Zielobjekt zugreifen.
 rep#:#rep_no_permission_to_delete#:#Kein Recht zum Löschen
@@ -9653,6 +9658,8 @@ dcl#:#dcl_supported_filetypes_desc#:#Sie können hier kommagetrennt Dateiendunge
 dcl#:#dcl_no_export_data_available#:#Keine Daten oder Felder für den Export verfügbar.
 dcl#:#dcl_no_export_content_available#:#Keine Daten für den Export verfügbar.
 dcl#:#dcl_no_export_fields_available#:#Keine Felder für den Export aktiviert. Markieren Sie mindestens ein Feld als "Exportierbar" in den <a href="%s">Tabelleneinstellungen</a>.
+dcl#:#dcl_no_read_access_on_any_standard_view#:#Sie haben auf keine Standard Tabellenansicht Lesezugriff.
+dcl#:#dcl_rbac_roles_without_read_access_on_any_standard_view#:#Die folgenden RBAC Rollen haben Lesezugriff auf die Datensammlung, jedoch auf keine Standard Ansicht der Tabellen:
 common#:#obj_dcl_duplicate#:#Datensammlung kopieren
 survey#:#freetext_answers#:#Freitext-Antworten
 forum#:#frm_at_least_one_moderator#:#Es muss mindestens ein Moderator zugewiesen sein.
@@ -9796,6 +9803,7 @@ common#:#crs_list_reg_noreg#:#Keine Anmeldung möglich
 common#:#crs_list_reg_limit_full#:#Keine freien Plätze verfügbar
 common#:#crs_list_reg_limit_places#:#Freie Plätze
 common#:#crs_list_reg_period#:#Anmeldungszeitraum
+common#:#crs_list_reg#:#Anmeldung
 search#:#lucene_offline_filter#:#Online-Status
 survey#:#svy_matrix_layout_percentages_sum_invalid#:#Die Spalten-Einstellungen summieren sich nicht auf 100%.
 common#:#grp_list_reg_start#:#Anmeldungsbeginn
@@ -9804,6 +9812,7 @@ common#:#grp_list_reg_noreg#:#Keine Anmeldung möglich
 common#:#grp_list_reg_limit_full#:#Keine freien Plätze verfügbar
 common#:#grp_list_reg_limit_places#:#Freie Plätze
 common#:#grp_list_reg_period#:#Beitrittszeitraum
+common#:#grp_list_reg#:#Beitritt
 crs#:#crs_member_passed_status_changed#:#Update-Status
 common#:#obj_hlps#:#Online-Hilfe
 common#:#add_entry#:#Eintragen
@@ -9890,6 +9899,7 @@ dcl#:#dcl_change_notification_subject#:#Die Datensatzsammlung "%s" wurde bearbei
 dcl#:#dcl_change_notification_link#:#Zur Datensammlung gehen
 dcl#:#dcl_change_notification_dcl_new_record#:#Der folgende Eintrag wurde erzeugt
 dcl#:#dcl_change_notification_dcl_update_record#:#Der folgende Eintrag wurde aktualisiert
+dcl#:#dcl_change_notification_dcl_delete_record#:#Der folgende Eintrag wurde gelöscht
 dcl#:#dcl_change_why_you_receive_this_email#:#Sie erhalten diese Nachricht weil Sie die Benachrichtigungsfunktion für die oben genannte Datensatzsammlung aktiviert haben.
 dcl#:#dcl_table#:#Tabelle
 dcl#:#dcl_changed_by#:#Letzte Änderung durch
@@ -10306,6 +10316,7 @@ ecs#:#ecs_cmap_all_in_one_info#:#Bitte geben Sie die Kategorie an, in welcher al
 ecs#:#ecs_cmap_all_in_one_cat#:#Kurs-Kategorie
 ecs#:#ecs_cmap_multiple_atts#:#Zuordnung nach Attributen
 ecs#:#ecs_cmap_att_organisation#:#Organisation
+ecs#:#ecs_member_auth_type#:#Authentifizierungsmodus der Teilnehmer
 ecs#:#ecs_cmap_att_term#:#Semester
 ecs#:#ecs_cmap_att_title#:#Veranstaltungstitel
 ecs#:#ecs_cmap_att_lecturer#:#Lehrperson
@@ -11013,7 +11024,7 @@ mst#:#mst_courses_of#:#Einschreibungen von %s
 orgu#:#msg_position_udpated#:#Position updated
 orgu#:#remove_successful#:#Der Benutzer wurde erfolgreich entfernt.
 orgu#:#orgu_enable_my_staff#:#‘Ansicht Mitarbeiter’ aktivieren
-orgu#:#orgu_enable_my_staff_info#:#The Ansicht ‘Meine Mitarbeiter’ zeigt die Lernfortschritte der eigenen Mitarbeiter an.
+orgu#:#orgu_enable_my_staff_info#:#Die Ansicht ‘Meine Mitarbeiter’ zeigt die Lernfortschritte der eigenen Mitarbeiter an.
 orgu#:#org_op_manage_members#:#Mitglieder bearbeiten
 orgu#:#org_op_read_learning_progress#:#Lernfortschritt von anderen Benutzern einsehen
 orgu#:#org_op_edit_submissions_grades#:#Abgaben von anderen Benutzern bearbeiten
@@ -13170,6 +13181,8 @@ chatroom#:#chatroom_auth#:#Authentifikation
 chatroom#:#chatroom_auth_key#:#Authentifikation-Schlüssel
 chatroom#:#chatroom_auth_secret#:#Authentifikation-Geheimnis
 chatroom#:#chatroom_auth_btn_txt#:#Schlüssel generieren
+chatroom#:#chatroom_client_name#:#Name
+chatroom#:#chatroom_client_name_info#:#Geben Sie hier einen global eindeutigen Namen des Mandanten zur Registrierung am Chat-Server ein. Initial wird hier die Mandanten-ID genutzt. Beim Ändern dieses Wertes muss der Chat-Server neu gestartet werden.
 chatroom#:#key#:#Schlüssel
 chatroom#:#dhparam#:#Diffie-Hellman Parameter
 chatroom#:#ilias_chatserver_connection#:#Verbindung ILIAS zum Server
@@ -13340,7 +13353,7 @@ assessment#:#save_on_navigation#:#Navigieren mit Speichern
 assessment#:#save_on_navigation_confirmation#:#Ihre geänderten Antworten werden beim Navigieren automatisch gespeichert.
 assessment#:#save_on_navigation_locked_confirmation#:#Ihre geänderten Antworten werden beim Navigieren automatisch gespeichert und festgeschrieben.
 assessment#:#save_on_navigation_forced_feedback_hint#:#Vorher erhalten Sie Feedback zu Ihrer Antwort.
-assessment#:#save_on_navigation_prevent_confirmation#:#Diese Meldung nicht mehr anzeigen.
+assessment#:#save_on_navigation_prevent_confirmation#:#Diese Meldung in meiner aktuellen Sitzung nicht mehr anzeigen.
 assessment#:#tst_answer_status_editing#:#(in Bearbeitung)
 assessment#:#tst_answer_status_answered#:#Beantwortet
 assessment#:#tst_answer_status_not_answered#:#Nicht beantwortet
@@ -13688,7 +13701,8 @@ chatroom#:#chat_osc_dont_accept_msg#:#Sie können aktuell von anderen Personen n
 chatroom#:#chat_osc_doesnt_accept_msg#:#Konversationen nicht möglich
 chatroom#:#chat_osc_subs_rej_msgs#:#Ihr Chat-Partner möchte zur Zeit keine Nachrichten empfangen. Er kann den Empfang von Chat-Nachrichten in seinen Chat-Einstellungen wieder aktivieren.
 chatroom#:#chat_osc_subs_rej_msgs_p#:#Die folgenden Konversationspartner möchten aktuell keine Nachrichten mehr empfangen: %s
-chatroom#:#chat_osc_self_rej_msgs#:#Sie können aktuell nicht an der Conversation teilnehmen, da Sie den Empfang von Chat-Nachrichten in Ihren Einstellungen aktuell unterdrückt haben.
+chatroom#:#chat_osc_self_rej_msgs#:#Sie können aktuell nicht an der Konversation teilnehmen, da Sie den Empfang von Chat-Nachrichten in Ihren Einstellungen aktuell unterdrückt haben.
+chatroom#:#chat_osc_search_modal_info#:#Suchen Sie hier nach einem Benutzer, den Sie zur Konversation hinzufügen möchten. Wenn Sie den Suchdialog in einem Gruppen-Chat geöffnet haben, wird der Benutzer zu diesem hinzugefügt. Wenn Sie den Suchdialog aus aus einem Einzel-Chat heraus geöffnet haben, öffnet sich nach dem Hinzufügen ein neues Fenster für den Gruppen-Chat.
 usr#:#user_actions#:#Benutzeraktionen
 usr#:#user_action#:#Benuzteraktion
 chatroom#:#chtr_activation_online_info#:#Wählen Sie diese Einstellung, um den Chatraum für Benutzer verfügbar zumachen.
@@ -13794,7 +13808,6 @@ mep#:#mobs_black_list_file_types_info#:#Diese List schränkt die Menge der erlau
 form#:#form_msg_file_type_is_not_allowed#:#Dieser Dateityp ist nicht erlaubt.
 common#:#file_no_valid_file_type#:#Dieser Dateityp ist nicht erlaubt.
 common#:#file_some_invalid_file_types_removed#:#Einige Dateitypen sind nicht erlaubt und wurden entfernt.
-ecs#:#ecs_member_auth_type#:#Authentifizierungsmethode für Kursmitglieder
 background_tasks#:#background_tasks#:#Background Tasks
 background_tasks#:#background_tasks_running#:#Background Tasks
 background_tasks#:#scheduled#:#Geplant
@@ -13915,7 +13928,7 @@ content#:#cont_ed_cell_left#:#Nach links verschieben
 content#:#cont_ed_cell_right#:#Nach rechts verschieben
 content#:#cont_ed_insert_grid_info#:#Fügt ein responsives Spaltenlayout basierend auf einem Raster mit 12 Einheiten je Zeile ein.
 content#:#cont_ed_grid_col_width#:#Spaltenbreite
-content#:#cont_ed_grid_col_width_info#:#Spalten können mehrere 1/12-Einheiten einer Zeile in Abhängigkeit von der Bildschirmgröße belegen. Die genannten Geräte sind Beispiele. Letztendlich entscheidet die Bildschirmgröße das Verhaltent. 12/12 entspricht einer Breite von 100%.
+content#:#cont_ed_grid_col_width_info#:#Spalten können mehrere 1/12-Einheiten einer Zeile in Abhängigkeit von der Bildschirmgröße belegen. Die genannten Geräte sind Beispiele. Letztendlich entscheidet die Bildschirmgröße das Verhalten. 12/12 entspricht einer Breite von 100%.
 content#:#cont_ed_grid_col_widths#:#Spaltenbreiten
 user#:#has_role#:#Rolle
 content#:#cont_grid_cell_confirm_deletion#:#Sollen die Spalten wirklich gelöscht werden?
@@ -14039,7 +14052,7 @@ grp#:#grp_create_new_grp_in#:#Neue Gruppe in '%1' erstellen.
 obj#:#obj_tool_setting_skills_info#:#Die Funktion ermöglicht es Kompetenzen auszuwählen und Mitgliedern Kompetenzausprägungen zuzuweisen.
 obj#:#cont_skll_published#:#Alle Kompetenzzuweisungen wurden veröffentlicht.
 obj#:#cont_skll_published_some_not#:#Alle gegebenen Kompetenzzuweisungen wurden veröffentlicht. Zu einigen Benutzern konnten keine Kompetenzen veröffentlicht werden, da keine Zuweisungen vorlagen.
-grp#:#grp_user_already_in_group#:#Der ausgewählte Benutzter ist bereits Mitglieder der Gruppe.
+grp#:#grp_user_already_in_group#:#Der ausgewählte Benutzer ist bereits Mitglied der Gruppe.
 prg#:#prg_deadline#:#Stichtag
 prg#:#prg_status_failed#:#nicht bestanden
 common#:#edit_page_meta#:#Seitenmetadaten bearbeiten
@@ -14102,7 +14115,7 @@ cont#:#cont_assign_skills#:#Kompetenzen zuweisen
 dateplaner#:#cal_batch_file_downloads#:#Datei-Downloads aus Kalender stapelweise verarbeiten
 dateplaner#:#cal_batch_file_downloads_info#:#Erlaubt Herunterladen aller Dateien zu Einträgen in der gewählten Kalenderansicht
 dateplaner#:#cal_download_files#:#Dateien herunterladen
-dateplaner#:#cal_calendar_download#:#Kalender herunterladen
+dateplaner#:#cal_calendar_download#:#Kalender-Dateien
 pdfgen#:#cleanup#:#Bereinigen
 skmg#:#skmg_order_nr_info#:#Platziert die Kompetenz in der Liste der Kompetenzen.
 common#:#position_permission_settings#:#Rechte nach Positionen
@@ -14151,7 +14164,7 @@ content#:#cont_sc_name_setting_fullname#:#Titel, Vorname und Nachname
 content#:#cont_sc_name_setting_salutation_lastname#:#Anrede und Nachname
 content#:#cont_sc_name_setting_first_name#:#Vorname
 content#:#cont_sc_name_setting_no_name#:#Kein Name
-dateplaner#:#cal_download_files_started#:#Download der Dateien wurde gestartet.
+dateplaner#:#cal_download_files_started#:#ILIAS erzeugt ein ZIP-Archiv mit allen zugehörigen Dateien. Sie können diese anschließend per Klick auf das Koffer-Icon in der Kopfzeile herunterladen.
 common#:#usr_name_undisclosed#:#Nicht freigegeben
 common#:#obj_exc_duplicate#:#Übung kopieren
 meta#:#adt_error_max_length#:#Der eingegebene Text ist zu lang. Bitte geben Sie einen kürzeren Text ein.
@@ -14178,3 +14191,4 @@ file#:#file_suffix_custom_white#:#Dateiendungen: Positivliste (Anpassungen)
 file#:#file_suffix_custom_white_info#:#Diese Dateiendungen werden der obigen Positivliste hinzugefügt.
 file#:#file_suffix_overall_white#:#Effektive Positivliste
 file#:#file_suffix_overall_white_info#:#Dies ist die endgültige Liste akzeptierter Dateiendungen.
+wiki#:#wiki_change_notification_body_new#:#die folgende Wiki-Seite wurde neu angelegt

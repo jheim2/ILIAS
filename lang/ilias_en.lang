@@ -713,6 +713,7 @@ assessment#:#tst_source_question_pool#:#Question Pool
 assessment#:#tst_filter_taxonomy#:#Taxonomy
 assessment#:#tst_filter_tax_node#:#Taxonomy Node
 assessment#:#tst_non_avail_pools_table#:#Non Available Questionpools
+assessment#:#tst_non_avail_pool_msg_status_trashed#:#This question pool is trashed, when it gets removed from system permanently, the test is no longer able to synchronize questions from it.
 assessment#:#tst_non_avail_pool_msg_status_lost#:#This question pool is not available anymore. Synchronizing questions from this pool is not possible any longer. You can derive a new question pool from the questions contained in this test.
 assessment#:#tst_derive_new_pool#:#Derive New Question Pool
 assessment#:#tst_derive_new_pools#:#Derive New Question Pools
@@ -943,7 +944,7 @@ assessment#:#term#:#Term
 assessment#:#terms#:#Terms
 assessment#:#text_correct#:#Correct Text
 assessment#:#text_gap#:#Text Gap
-assessment#:#text_maximum_chars_allowed#:#Please do not enter more than a maximum of %s characters. Any characters above will be cut.
+assessment#:#text_maximum_chars_allowed#:#Please do not enter more than a maximum of %s characters. Additional characters won't get cut, but the exceeding might be considered during scoring.
 assessment#:#text_rating#:#Text Matching Method
 assessment#:#text_wrong#:#Wrong Text
 assessment#:#textsize_errortext_info#:#Enter the text size of the error text in percent if you want another size than 100 percent.
@@ -1525,6 +1526,7 @@ cmps#:#cmps_needs_update#:#Needs update.
 cmps#:#cmps_needs_upgrade#:#The plugin version currently installed is older than a previously installed version. Please upgrade the plugin.
 cmps#:#cmps_no_db_update_file_available#:#No DB update script available.
 cmps#:#cmps_no_language_file_available#:#No language file available.
+cmps#:#cmps_must_installed#:#The component must be installed.
 cmps#:#cmps_plugin_activated#:#The plugin has been activated.
 cmps#:#cmps_plugin_db_prefixes#:#DB Table Prefixes
 cmps#:#cmps_plugin_deactivated#:#The plugin has been deactivated.
@@ -2896,7 +2898,7 @@ common#:#obj_cert_desc#:#Settings for certificates
 common#:#obj_cert#:#Certificates
 common#:#obj_wfe#:#Workflow Engine
 common#:#obj_chap#:#Chapter
-common#:#obj_cmps_desc#:#General settings for Repository Plugins
+common#:#obj_cmps_desc#:#General settings for Plugins
 common#:#obj_cmps#:#Plugins
 common#:#obj_crs_duplicate#:#Copy Course
 common#:#obj_crs#:#Course
@@ -7202,7 +7204,7 @@ survey#:#maintenance#:#Participants
 survey#:#manage_phrases#:#My Phrases
 survey#:#material_added_successfully#:#You successfully set a material link!
 survey#:#material#:#Material
-survey#:#materials_deleted#:#Material(s) deleted
+survey#:#materials_deleted#:#Material(s) have been removed from the question.
 survey#:#materials#:#Materials
 survey#:#matrix_appearance#:#Appearance
 survey#:#matrix_bipolar_adjectives_description#:#You may use a pair of bipolar adjectives to scale the column responses to words, short phrases, or texts
@@ -7787,7 +7789,9 @@ rbac#:#log#:#Log
 rbac#:#rbac_log#:#Log
 rbac#:#rbac_changes#:#Changes
 rbac#:#rbac_log_operation_add#:#Added Operation for "%s"
+rbac#:#rbac_log_operation_rmv#:#Removed Operation for "%s"
 rbac#:#rbac_log_inheritance_add#:#Stopped Inheritance for "%s"
+rbac#:#rbac_log_inheritance_rmv#:#Allowed Inheritance for "%s"
 rbac#:#rbac_log_source_object#:#Source object
 rbac#:#rbac_log_edit_permissions#:#Edit Permissions
 rbac#:#rbac_log_move_object#:#Move Object
@@ -9914,6 +9918,7 @@ common#:#crs_list_reg_start#:#Registration Begin
 common#:#crs_list_reg_end#:#Registration End
 common#:#crs_list_reg_noreg#:#No Registration Possible
 common#:#crs_list_reg_period#:#Registration Period
+common#:#crs_list_reg#:#Registration
 common#:#crs_list_reg_limit_full#:#No places left
 common#:#crs_list_reg_limit_places#:#Free places
 search#:#lucene_offline_filter#:#Online-Status
@@ -9927,6 +9932,7 @@ common#:#grp_list_reg_start#:#Registration Begin
 common#:#grp_list_reg_end#:#Registration End
 common#:#grp_list_reg_noreg#:#No Registration Possible
 common#:#grp_list_reg_period#:#Registration Period
+common#:#grp_list_reg#:#Registration
 common#:#grp_list_reg_limit_full#:#No places left
 common#:#grp_list_reg_limit_places#:#Free places
 survey#:#svy_matrix_layout_percentages_sum_invalid#:#The column settings do not sum up to 100%.
@@ -10042,8 +10048,9 @@ rtst#:#rtst_call#:#Call ECS Test
 rbac#:#contribute#:#Contribute
 dcl#:#dcl_change_notification_subject#:#Data Collection "%s" has been changed
 dcl#:#dcl_change_notification_link#:#Link to the Data Collection
-dcl#:#dcl_change_notification_dcl_new_record#:#The following Entry has been created
-dcl#:#dcl_change_notification_dcl_update_record#:#The following Entry has been updated
+dcl#:#dcl_change_notification_dcl_new_record#:#The following data record has been created
+dcl#:#dcl_change_notification_dcl_update_record#:#The following data record has been updated
+dcl#:#dcl_change_notification_dcl_delete_record#:#The following data record has been deleted
 dcl#:#dcl_change_why_you_receive_this_email#:#You receive this message because you have activated the notification about this data collection.
 dcl#:#dcl_table#:#Table
 dcl#:#dcl_changed_by#:#Changed by
@@ -10287,6 +10294,7 @@ ecs#:#ecs_cmap_all_in_one_cat#:#Course Category
 ecs#:#ecs_cmap_multiple_atts#:#Multiple Attributes
 ecs#:#ecs_cmap_att_organisation#:#Organisation
 ecs#:#ecs_cmap_att_orgunit#:#Organisational Unit
+ecs#:#ecs_member_auth_type#:#Authentication Mode (Participants)
 ecs#:#ecs_cmap_att_term#:#Term
 ecs#:#ecs_cmap_att_title#:#Title
 ecs#:#ecs_cmap_att_lecturer#:#Lecturer
@@ -10476,6 +10484,8 @@ dcl#:#dcl_supported_filetypes_desc#:#You can set the allowed extensions comma se
 dcl#:#dcl_no_export_data_available#:#No data or fields available for export.
 dcl#:#dcl_no_export_content_available#:#No data available for export.
 dcl#:#dcl_no_export_fields_available#:#No fields activated for export. Mark at least one field as exportable in the <a href="%s">table settings</a>.
+dcl#:#dcl_no_read_access_on_any_standard_view#:#You don't have read access on any standard view of a table.
+dcl#:#dcl_rbac_roles_without_read_access_on_any_standard_view#:#The following rbac roles have read access on the data collection, but no read access on any standard view of a table:
 rbac#:#dcl_edit_content#:#Edit entries
 common#:#obj_bibl#:#Bibliography
 common#:#objs_bibl#:#Bibliographies
@@ -13151,6 +13161,8 @@ chatroom#:#chatroom_auth#:#Authentication
 chatroom#:#chatroom_auth_key#:#Authentication-Key
 chatroom#:#chatroom_auth_secret#:#Authentication-Secret
 chatroom#:#chatroom_auth_btn_txt#:#Generate Keys
+chatroom#:#chatroom_client_name#:#Name
+chatroom#:#chatroom_client_name_info#:#Please enter a name for this ILIAS client. The entered string must be globally unique. Initially this value is set to the client id of the ILIAS client. If changed, the chat server must be restarted.
 chatroom#:#key#:#Key
 chatroom#:#dhparam#:#Diffie-Hellman Parameter
 chatroom#:#ilias_chatserver_connection#:#ILIAS to Server Connection
@@ -13321,7 +13333,7 @@ assessment#:#save_on_navigation#:#Save on Navigation###fau: testNav
 assessment#:#save_on_navigation_confirmation#:#Your changed answers will be automatically saved when you navigate.###fau: testNav
 assessment#:#save_on_navigation_locked_confirmation#:#Your changed answers will be automatically saved and locked when you navigate.###fau: testNav
 assessment#:#save_on_navigation_forced_feedback_hint#:#Before you get feedback on your given answer.###fau: testNav
-assessment#:#save_on_navigation_prevent_confirmation#:#Don't show this message again###fau: testNav
+assessment#:#save_on_navigation_prevent_confirmation#:#Don't show this message again in my current session.
 assessment#:#tst_answer_status_editing#:# (editing)###fau: testNav
 assessment#:#tst_answer_status_answered#:#Answered###fau: testNav
 assessment#:#tst_answer_status_not_answered#:#Not answered###fau: testNav
@@ -13711,6 +13723,7 @@ chatroom#:#chtr_activation_limited_visibility_info#:#If checked, the title of th
 chatroom#:#chat_osc_subs_rej_msgs#:#Currently it is not possible to continue this conversation. Your chat-partner must activate chats in the chat-settings.
 chatroom#:#chat_osc_subs_rej_msgs_p#:#The following chat partners of your conversation do not want to receive messages anymore: %s
 chatroom#:#chat_osc_self_rej_msgs#:#You currently cannot take part in this conversation because you suppressed receiving messages in your settings.
+chatroom#:#chat_osc_search_modal_info#:#Here you can search for users you would like to add to a conversation. If the search dialogue was opened within a group chat, the new user will be added to this chat. If you started the search within a 1:1 chat, a new group chat window will be opened. 
 chatroom#:#chtr_server_status#:#Server Status
 chatroom#:#chtr_ban_actor_tbl_head#:#Akteur
 chatroom#:#chtr_ban_ts_tbl_head#:#Timestamp
@@ -13811,7 +13824,6 @@ mep#:#mobs_black_list_file_types_info#:#Enter a comma separated list of file suf
 form#:#form_msg_file_type_is_not_allowed#:#This file type is not allowed.
 common#:#file_no_valid_file_type#:#This file type is not allowed.
 common#:#file_some_invalid_file_types_removed#:#Some file types are not allowed and have been removed.
-ecs#:#ecs_member_auth_type#:#Course Member Auth Mode
 background_tasks#:#background_tasks#:#Background Tasks
 background_tasks#:#background_tasks_running#:#Background Tasks
 background_tasks#:#scheduled#:#Scheduled
@@ -14153,7 +14165,7 @@ content#:#cont_sc_name_setting_fullname#:#Title, First name and Last name
 content#:#cont_sc_name_setting_salutation_lastname#:#Salutation and Last name
 content#:#cont_sc_name_setting_first_name#:#First name
 content#:#cont_sc_name_setting_no_name#:#no name
-dateplaner#:#cal_download_files_started#:#Download of calendar files has started.
+dateplaner#:#cal_download_files_started#:#ILIAS is generating a ZIP archive of all available files. You can download them by clicking on the bag icon in the top bar.
 poll#:#poll_voting_period_full_info#:#Voting period from %s to %s
 common#:#usr_name_undisclosed#:#Undisclosed
 common#:#obj_exc_duplicate#:#Copy Exercise
@@ -14178,3 +14190,4 @@ file#:#file_suffix_custom_white#:#Custom Suffix Whitelist
 file#:#file_suffix_custom_white_info#:#These suffixes will be added to the default whitelist.
 file#:#file_suffix_overall_white#:#Overal Suffix Whitelist
 file#:#file_suffix_overall_white_info#:#Resulting overall list of accepted file suffixes.
+wiki#:#wiki_change_notification_body_new#:#the following wiki page was created
