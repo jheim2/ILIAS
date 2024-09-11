@@ -225,12 +225,12 @@ class ilECSCmsCourseMemberCommandQueueHandler implements ilECSCommandQueueHandle
                 // the sequence number in the course ressource
                 $sequence_number = (int) $pgroup->num;
                 // find parallel group with by sequence number
-                $tmp_pgroup = $course->groups[$sequence_number];
+                $tmp_pgroup = $course->groups[$sequence_number] ?? null;
                 if (is_object($tmp_pgroup) && $tmp_pgroup->id !== '') {
                     $this->log->debug('Found parallel group with id: ' . $tmp_pgroup->id . ': for sequence number: ' . $sequence_number);
 
                     // @todo check hierarchy of roles
-                    $assigned[$tmp_pgroup->id][$member->personID] = array(
+                  $assigned[$pgroup->id][$member->personID] = array(
                         'id' => $member->personID,
                         'role' => $pgroup->role
                     );
@@ -459,7 +459,7 @@ class ilECSCmsCourseMemberCommandQueueHandler implements ilECSCommandQueueHandle
      */
     private function readCourse($course_member)
     {
-        $ecs_id = ilECSImportManager::getInstance()->lookupEContentIdByContentId(
+        $ecs_id = ilECSImportManager::getInstance()->lookupLatestEContentIdByContentId(
             $this->getServer()->getServerId(),
             $this->getMid(),
             $course_member->lectureID

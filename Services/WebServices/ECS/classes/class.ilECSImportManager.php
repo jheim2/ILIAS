@@ -121,6 +121,20 @@ class ilECSImportManager
         return 0;
     }
 
+    public function lookupLatestEContentIdByContentId($a_server_id, $a_mid, $a_content_id): int
+    {
+        $query = 'SELECT * from ecs_import ' .
+            'WHERE server_id = ' . $this->db->quote($a_server_id, 'integer') . ' ' .
+            'AND mid = ' . $this->db->quote($a_mid, 'integer') . ' ' .
+            'AND content_id = ' . $this->db->quote($a_content_id, 'text') . ' ' .
+            'ORDER BY econtent_id DESC';
+        $res = $this->db->query($query);
+        if ($row = $res->fetchRow(ilDBConstants::FETCHMODE_OBJECT)) {
+            return (int) $row->econtent_id;
+        }
+        return 0;
+    }
+
     /**
      * get all imported links
      *
