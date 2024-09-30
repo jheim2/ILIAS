@@ -139,18 +139,21 @@ class ilLoggerFactory
             return false;
         }
 
-        if (
-            $this->dic->isDependencyAvailable('http') &&
-            strpos($this->dic->http()->request()->getServerParams()['HTTP_ACCEPT'], 'text/html') !== false
-        ) {
-            return true;
-        }
-        if (
-            $this->dic->isDependencyAvailable('http') &&
-            strpos($this->dic->http()->request()->getServerParams()['HTTP_ACCEPT'], 'application/json') !== false
-        ) {
-            return false;
-        }
+        if (isset($this->dic->http()->request()->getServerParams()['HTTP_ACCEPT'])) {
+
+            if (
+                $this->dic->isDependencyAvailable('http') &&
+                strpos($this->dic->http()->request()->getServerParams()['HTTP_ACCEPT'], 'text/html') !== false
+            ) {
+                return true;
+            }
+            if (
+                $this->dic->isDependencyAvailable('http') &&
+                strpos($this->dic->http()->request()->getServerParams()['HTTP_ACCEPT'], 'application/json') !== false
+            ) {
+                return false;
+            }
+    }
         return true;
     }
 
