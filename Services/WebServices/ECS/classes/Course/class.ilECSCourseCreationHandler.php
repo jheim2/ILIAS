@@ -156,10 +156,14 @@ class ilECSCourseCreationHandler
         if ($obj_id) {
             // do update
             $this->logger->debug('Performing update of already imported course.');
-
+            
             $refs = ilObject::_getAllReferences($obj_id);
             $ref = end($refs);
-
+            
+            $import = new ilECSImport($this->getServer()->getServerId(), $obj_id);
+            $import->setEContentId((string) $a_content_id);
+            $import->save();
+            
             $this->doSync(
                 $a_content_id,
                 $course,
